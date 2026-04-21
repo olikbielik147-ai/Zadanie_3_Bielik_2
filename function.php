@@ -1,4 +1,5 @@
 <?php
+
 function generateSlides($dir) {
     $files = glob($dir . "/*.jpg");
 
@@ -12,17 +13,12 @@ function generateSlides($dir) {
 
         echo '<div class="slide fade">';
         echo '<img src="' . $file . '">';
-
         echo '<div class="slide-text">';
         echo isset($text[$filename]) ? $text[$filename] : "";
         echo '</div>';
-
         echo '</div>';
     }
 }
-?>
-
-<?php
 
 function load_banner_data() {
     $path = "data/banery.json";
@@ -46,3 +42,24 @@ function render_banners() {
         </div>';
     }
 }
+
+function getConnection() {
+    $host = "localhost";
+    $db   = "tvoja_databaza";
+    $user = "root";
+    $pass = "";
+
+    return new PDO("mysql:host=$host;dbname=$db;charset=utf8", $user, $pass);
+}
+
+function getData() {
+    $path = "data/data.json";
+    if (!file_exists($path)) {
+        return [];
+    }
+
+    $json = file_get_contents($path);
+    return json_decode($json, true);
+}
+
+?>
