@@ -1,0 +1,18 @@
+[
+  {
+    "question": "Na čo sa používa HTML?",
+    "answer": "HTML slúži na vytváranie štruktúry webových stránok pomocou značiek."
+  },
+  {
+    "question": "Čo je to API?",
+    "answer": "API je rozhranie, ktoré umožňuje komunikáciu medzi rôznymi aplikáciami alebo službami."
+  },
+  {
+    "question": "Prečo je dôležitá responzívna webová stránka?",
+    "answer": "Responzívny dizajn zabezpečuje, že stránka sa správne zobrazuje na mobiloch, tabletoch aj počítačoch."
+  },
+  {
+    "question": "Čo znamená pojem frontend?",
+    "answer": "Frontend je časť webu, ktorú vidí používateľ a s ktorou priamo pracuje."
+  }
+]

@@ -1,4 +1,7 @@
-<?php include "function.php"; ?>
+<?php 
+include "function.php"; 
+$data = getData(); // načítanie otázok a odpovedí z DB
+?>
 <!DOCTYPE html>
 <html lang="sk">
 <head>
@@ -18,6 +21,7 @@
         <h1>Q&A</h1>
       </div>
     </section>
+
     <section class="container">
       <div class="row">
         <div class="col-100 text-center">
@@ -25,30 +29,40 @@
         </div>
       </div>
     </section>
-      <section class="container">
-      <div class="accordion">
-        <div class="question">Otázka 1</div>
-        <div class="answer">Odpoveď 1</div>
-      </div>
-      <div class="accordion">
-        <div class="question">Otázka 2</div>
-        <div class="answer">Odpoveď 2</div>
-      </div>
-      <div class="accordion">
-        <div class="question">Otázka 3</div>
-        <div class="answer">Odpoveď 3</div>
-      </div>
+
+    <section class="container">
+
+      <?php if (!empty($data)): ?>
+          <?php foreach ($data as $row): ?>
+              <div class="accordion">
+                  <div class="question">
+                      <?= htmlspecialchars($row['question']) ?>
+                  </div>
+                  <div class="answer">
+                      <?= htmlspecialchars($row['answer']) ?>
+                  </div>
+              </div>
+          <?php endforeach; ?>
+      <?php else: ?>
+          <p>Momentálne nie sú dostupné žiadne otázky a odpovede.</p>
+      <?php endif; ?>
+
     </section>
-    </section>
-  </div>
+
   </main>
+
 <script src="js/accordion.js"></script>
 <script src="js/menu.js"></script>
-</body>
-<?php  $file_path = "parts/header.php"; if(!include($file_path)) {     echo"Failed to include $file_path";} ?>
- <?php  $file_path = "parts/footer.php"; if(!include($file_path)) {     echo"Failed to include $file_path";} ?>
- <?php
-require 'function.php';
-$data = getData();
+
+<?php  
+$file_path = "parts/header.php"; 
+if(!include($file_path)) { echo "Failed to include $file_path"; } 
 ?>
+
+<?php  
+$file_path = "parts/footer.php"; 
+if(!include($file_path)) { echo "Failed to include $file_path"; } 
+?>
+
+</body>
 </html>
