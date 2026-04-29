@@ -5,55 +5,52 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Moja stránka</title>
+    <title>Moja stranka</title>
     <link rel="stylesheet" href="css/form.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/banner.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-  <main>
-    <section class="banner">
-      <div class="container text-white">
-        <h1>Kontakt</h1>
+<?php $file_path = "parts/header.php"; if(!include($file_path)) { echo "Failed to include $file_path"; } ?>
+
+<main>
+  <section class="banner">
+    <div class="container text-white">
+      <h1>Kontakt</h1>
+    </div>
+  </section>
+  <section>
+    <div class="container">
+      <div class="col-100 text-center">
+        <p><strong><em>Elit culpa id mollit irure sit. Ex ut et ea esse culpa officia ea incididunt elit velit veniam qui. Mollit deserunt culpa incididunt laborum commodo in culpa.</em></strong></p>
       </div>
-    </section>
-    <section>
-      <div class="container">
-        <div class="col-100 text-center">
-          <p><strong><em>Elit culpa id mollit irure sit. Ex ut et ea esse culpa officia ea incididunt elit velit veniam qui. Mollit deserunt culpa incididunt laborum commodo in culpa.</em
-          ></strong></p>
-        </div>
+    </div>
+  </section>
+  <section class="container">
+    <div class="row">
+      <div class="col-50">
+        <h3>Mate otazky?</h3>
+        <p>Incididunt mollit quis eiusmod tempor voluptate duis eu enim amet excepteur cupidatat magna velit.</p>
+        <p>Velit id ad laborum velit commodo.</p>
+        <p>Consectetur laborum aliqua nulla anim cupidatat consectetur est veniam cupidatat.</p>
       </div>
-    </section>
-    <section class="container">
-      <div class="row">
-        <div class="col-50"> 
-          <h3>Máte otázky?</h3>
-          <p>Incididunt mollit quis eiusmod tempor voluptate duis eu enim amet excepteur cupidatat magna velit. </p> 
-          <p>Velit id ad laborum velit commodo.</p>
-          <p>Consectetur laborum aliqua nulla anim cupidatat consectetur est veniam cupidatat.</p>
-        </div>
-        <div class="col-50 text-right">
-          <h3>Napíšte nám</h3>
-          <form id="contact" action="thankyou.html">
-            <input type="text" placeholder="Vaše meno" id ="meno"  required><br>
-            <input type="email" placeholder="Váš email" id="email" required><br>
-            <textarea name="" placeholder="Vaša správa" id="sprava"></textarea><br>
-            <input type="checkbox" name="" id="" required>
-            <label for=""> Súhlasím so spracovaním osobných údajov.</label><br>
-            <input type="submit" value="Odoslať">
-          </form>
-        </div>
+      <div class="col-50 text-right">
+        <h3>Napiste nam</h3>
+        <form id="contact" action="thankyou.php">
+          <input type="text" placeholder="Vase meno" id="meno" required><br>
+          <input type="email" placeholder="Vas email" id="email" required><br>
+          <textarea name="" placeholder="Vasa sprava" id="sprava"></textarea><br>
+          <input type="checkbox" name="" id="" required>
+          <label for="">Suhlasim so spracovanim osobnych udajov.</label><br>
+          <input type="submit" value="Odoslat">
+        </form>
       </div>
-    </section>
-  </main>
-  <script src="js/menu.js"></script>
+    </div>
+  </section>
+</main>
+
+<?php $file_path = "parts/footer.php"; if(!include($file_path)) { echo "Failed to include $file_path"; } ?>
+<script src="js/menu.js"></script>
 </body>
-<?php  $file_path = "parts/header.php"; if(!include($file_path)) {     echo"Failed to include $file_path";} ?>
- <?php  $file_path = "parts/footer.php"; if(!include($file_path)) {     echo"Failed to include $file_path";} ?>
- <?php
-require 'function.php';
-$data = getData();
-?>
 </html>
