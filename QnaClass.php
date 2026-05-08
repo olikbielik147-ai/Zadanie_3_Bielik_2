@@ -2,18 +2,19 @@
 
 namespace App;
 
-use PDOException;
-
-class QnA extends Database
+class QnA
 {
     public function getAll(): array
     {
-        try {
-            $statement = $this->getConnection()->query('SELECT question, answer FROM qna');
-            $data = $statement->fetchAll();
-        } catch (PDOException $e) {
+        $path = __DIR__ . '/data/data.json';
+
+        if (!file_exists($path)) {
             return [];
         }
+
+        $json = file_get_contents($path);
+        $data = json_decode($json, true);
+
         if (!is_array($data)) {
             return [];
         }
