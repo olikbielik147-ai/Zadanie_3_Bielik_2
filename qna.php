@@ -1,5 +1,4 @@
 <?php
-require_once __DIR__ . '/Database.php';
 require_once __DIR__ . '/QnaClass.php';
 
 use App\QnA;
